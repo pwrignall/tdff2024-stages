@@ -19,7 +19,7 @@ const stages_data = {
   },
   "stage-03": {
     "name": "\u00c9tape 3",
-    "date": "2024-08-13T17:50:00+0200",
+    "date": "2024-08-13T15:10:00+0200",
     "location": "Rotterdam to Rotterdam (NL)",
     "distance": 6.302160570517018,
     "up": 24.98,
