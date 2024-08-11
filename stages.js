@@ -106,7 +106,7 @@ Object.keys(stages_data).forEach((stageKey) => {
   const elevation = stageInfo.up;
   
   if (stageKey === "stage-03") {
-    etaValue += (160 * 60);
+    etaValue += (160 * 60 * 1000);
   } else {
     etaValue += 75658.1904 * distance + 1484.9559 * elevation + -10175.2012;
   };
