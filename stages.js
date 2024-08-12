@@ -2,7 +2,7 @@ const stages_data = {
   "stage-01": {
     "name": "\u00c9tape 1",
     "date": "2024-08-12T12:15:00+0200",
-    "location": "Rotterdam to La Haye (NL)",
+    "location": "Rotterdam to The Hague (NL)",
     "distance": 122.78260682402917,
     "up": 258.28999999999996,
     "down": -256.98999999999995,
