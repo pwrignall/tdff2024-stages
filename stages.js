@@ -111,14 +111,14 @@ Object.keys(stages_data).forEach((stageKey) => {
     etaValue += 75658.1904 * distance + 1484.9559 * elevation + -10175.2012;
   };
   const stageFinish = new Date(etaValue);
-  eta.textContent = `${stageFinish.toLocaleTimeString("en-GB", {
+  eta.textContent = `${stageFinish.toLocaleTimeString([], {
     hour: "numeric",
     minute: "numeric",
   })}`;
   const tz_text = document.createElement("span");
   tz_text.className = "tz";
   tz_text.textContent += `${stageFinish
-    .toLocaleTimeString("en-GB", {
+    .toLocaleTimeString([], {
       hour: "numeric",
       minute: "numeric",
       timeZoneName: "short",
@@ -131,15 +131,23 @@ Object.keys(stages_data).forEach((stageKey) => {
   stageHeader.textContent += ` : ${stageStart
     .toLocaleDateString("en-GB", {
       weekday: "short",
-      // year: "numeric",
       month: "short",
       day: "numeric",
       hour: "numeric",
       minute: "numeric",
     })
-    // .slice(0, -5)
     .replace(",", "")}`;
-  topElems.appendChild(stageHeader);
+  const stageStartTz = document.createElement("span");
+  stageStartTz.className = "tz";
+  stageStartTz.textContent = `${stageStart
+    .toLocaleTimeString("en-GB", {
+      hour: "numeric",
+      minute: "numeric",
+      timeZoneName: "short",
+    })
+  .slice(5)}`;
+  stageHeader.appendChild(stageStartTz);
+  topElems.appendChild(stageHeader)
 
   Object.keys(stageInfo).forEach((key) => {
     if (!["name", "date", "finish"].includes(key)) {
