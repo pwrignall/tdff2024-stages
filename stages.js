@@ -111,14 +111,14 @@ Object.keys(stages_data).forEach((stageKey) => {
     etaValue += 75658.1904 * distance + 1484.9559 * elevation + -10175.2012;
   };
   const stageFinish = new Date(etaValue);
-  eta.textContent = `${stageFinish.toLocaleTimeString([], {
+  eta.textContent = `${stageFinish.toLocaleTimeString("en-GB", {
     hour: "numeric",
     minute: "numeric",
   })}`;
   const tz_text = document.createElement("span");
   tz_text.className = "tz";
   tz_text.textContent += `${stageFinish
-    .toLocaleTimeString([], {
+    .toLocaleTimeString("en-GB", {
       hour: "numeric",
       minute: "numeric",
       timeZoneName: "short",
